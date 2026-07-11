@@ -579,11 +579,17 @@ a {
 }
 
 @media (max-width: 620px) {
+  .site-nav {
+    align-items: flex-start;
+  }
+
+  .brand {
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+
   .brand span:last-child {
-    max-width: 12rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .hero-section,
