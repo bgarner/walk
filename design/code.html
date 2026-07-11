@@ -1,0 +1,294 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&amp;family=Montserrat:wght@300..700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#00531d",
+                    "outline-variant": "#c1c7d3",
+                    "on-surface": "#1d1b16",
+                    "primary-fixed": "#d4e3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#705d00",
+                    "tertiary-container": "#21863b",
+                    "inverse-on-surface": "#f6f0e7",
+                    "on-surface-variant": "#414751",
+                    "surface-bright": "#fff9f0",
+                    "tertiary-fixed": "#96f89f",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#221b00",
+                    "on-primary-fixed": "#001c39",
+                    "on-tertiary-container": "#f7fff2",
+                    "inverse-primary": "#a4c9ff",
+                    "surface-dim": "#dfd9d1",
+                    "tertiary": "#006b28",
+                    "inverse-surface": "#32302a",
+                    "outline": "#717783",
+                    "on-primary-fixed-variant": "#004883",
+                    "secondary-fixed": "#ffe173",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fdd73b",
+                    "surface": "#fff9f0",
+                    "surface-container-high": "#ede7df",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#e8c426",
+                    "on-secondary-fixed-variant": "#554500",
+                    "on-background": "#1d1b16",
+                    "surface-container": "#f3ede4",
+                    "on-secondary-container": "#715d00",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f9f3ea",
+                    "primary-fixed-dim": "#a4c9ff",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#fdfcff",
+                    "primary-container": "#2976c7",
+                    "background": "#fff9f0",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#0060ac",
+                    "surface-variant": "#e7e2d9",
+                    "surface-container-highest": "#e7e2d9",
+                    "tertiary-fixed-dim": "#7bdb85",
+                    "on-tertiary-fixed": "#002107",
+                    "primary": "#005da7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "stack-md": "16px",
+                    "unit": "8px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Montserrat"],
+                    "label-lg": ["Montserrat"],
+                    "headline-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "display-lg-mobile": ["Quicksand"],
+                    "label-md": ["Montserrat"],
+                    "display-lg": ["Quicksand"],
+                    "body-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    }catch(_e){}</script></head><body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface shadow-[0_20px_40px_rgba(0,96,172,0.1)]">
+    <div class="flex justify-between items-center px-container-padding py-stack-sm max-w-[1200px] mx-auto">
+        <div class="flex items-center gap-2">
+            <img alt="Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm1V5HGB6PAB2YPRB99Hh9KCugz6ErIq38ofNQ3kKupQ_bvNtyUES-4SyQTq0IkfpvlMC2iXoPXH_ZyKhhgDVHTwzmR3_D7NymuMNWOjlwsovae7YZ6FkNmMZHPtLvNrayf-gaCl57agsqc_k7GkDSYNKyNgA2DbNMT_DEMzc9oCG5QmSxyfESxrA1DpEaHoxlgO0byYXPUPhuCGiyvpzAjLaoIgZ7IcGDzujJ-J4ldhT3KL_U2D52">
+            <span class="font-headline-lg text-headline-lg text-primary">Walk Around The World</span>
+        </div>
+        
+        <a href="#submit-modal" class="bubbly-button bg-primary text-on-primary font-label-lg px-6 py-2 rounded-full flex items-center justify-center">Log My Steps</a>
+    </div>
+</nav>
+
+<main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative px-container-padding max-w-[1200px] mx-auto py-stack-lg">
+        <div class="flex flex-col md:flex-row items-center gap-stack-lg">
+            <div class="w-full md:w-1/2 flex flex-col items-start gap-4 z-10">
+                <span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-md uppercase tracking-wider">Join the Voyage</span>
+                <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">One Small Step for You, <br class="">
+                    <span class="text-primary">One Giant Walk</span> for the East Lake Ward.</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    We're walking from Airdrie, Canada to the Eiffel Tower, Paris—one collective step at a time. Put on your shoes and join our global community journey!
+                </p>
+                <!-- Collective Total Counter -->
+                <div class="glass-card p-6 rounded-xl soft-bloom border border-white/50 mt-4 flex flex-col gap-2">
+                    <span class="font-label-md text-primary uppercase">Collective Total Steps</span>
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-display-lg text-primary" id="step-counter">12,458,902</span>
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">footprint</span>
+                    </div>
+                    <p class="font-label-md text-on-surface-variant">42% of the way to the Eiffel Tower!</p>
+                </div>
+                <div class="flex gap-4 mt-6">
+                    <a href="#submit-modal" class="bubbly-button bg-primary text-on-primary px-8 py-4 rounded-xl font-label-lg flex items-center justify-center">Log My Steps</a>
+                    
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 relative">
+                <img alt="Whimsical Path" class="w-full rounded-xl soft-bloom floating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMyv-jZ_AP2whcL2l6owoOct9_tXUhIr4BSxXnjRSS6OgWO57XKBH6Z2Sdd2zOgifz531MIfo9crHr3qroCpmqfKUZEITuuqyyNGEjEcUAUWyZCBaiESzvtB2QmofpL5mfeViKiabf3_AMTVaQTPTLjEVkHe5PaLEJuo1R1WQPM8Vc-CZi9Ucnp0pcjABNeoaCed-QwSwBMln-PEmNsWS_X6Ti5eomqOxKIrT9x3YoAK3ZTQ0otO7E">
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-tertiary-fixed rounded-full -z-10 blur-xl opacity-40"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Map Section -->
+    <section id="global-path" class="bg-surface-container-low py-20 overflow-hidden">
+        <div class="max-w-[1200px] mx-auto px-container-padding">
+            <div class="text-center mb-16">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Our progress</h2>
+                <p class="font-body-md text-on-surface-variant">Track our collective progress across continents.</p>
+            </div>
+            <div class="relative min-h-[400px] flex items-center justify-center">
+                <svg class="absolute w-full h-full pointer-events-none" fill="none" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+                    <path class="winding-path" d="M50 200C150 100 250 300 350 200C450 100 550 300 650 200C750 100 850 300 950 200" stroke="#005da7" stroke-linecap="round" stroke-width="12"></path>
+                </svg>
+                <div class="absolute left-[5%] top-[200px] -translate-y-1/2 flex flex-col items-center">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center soft-bloom border-4 border-primary">
+                        <span class="material-symbols-outlined text-primary">home</span>
+                    </div>
+                    <span class="mt-4 font-label-lg text-on-surface font-bold">Airdrie, Canada</span>
+                    <span class="font-label-md text-on-surface-variant">The Start Line</span>
+                </div>
+                <div class="absolute left-[42%] top-[150px] -translate-y-1/2 flex flex-col items-center animate-bounce">
+                    <div class="bg-secondary p-3 rounded-full soft-bloom">
+                        <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">directions_walk</span>
+                    </div>
+                    <div class="bg-white px-3 py-1 rounded-lg soft-bloom mt-2">
+                        <span class="font-label-md font-bold text-secondary">WE ARE HERE</span>
+                    </div>
+                </div>
+                <div class="absolute right-[5%] top-[200px] -translate-y-1/2 flex flex-col items-center opacity-60">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center soft-bloom border-4 border-outline-variant">
+                        <span class="material-symbols-outlined text-outline">architecture</span>
+                    </div>
+                    <span class="mt-4 font-label-lg text-on-surface font-bold">Eiffel Tower, Paris</span>
+                    <span class="font-label-md text-on-surface-variant">Next Milestone</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-gutter mt-20 md:grid-cols-2 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl soft-bloom border border-surface-container-high hover:scale-[1.02] transition-transform">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-4">public</span>
+                    <h4 class="font-headline-md text-headline-md mb-2">3,420 KM</h4>
+                    <p class="font-body-md text-on-surface-variant">Distance covered since we started our journey in Airdrie.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl soft-bloom border border-surface-container-high hover:scale-[1.02] transition-transform">
+                    <span class="material-symbols-outlined text-4xl text-tertiary mb-4">groups</span>
+                    <h4 class="font-headline-md text-headline-md mb-2">1,250 Walkers</h4>
+                    <p class="font-body-md text-on-surface-variant">Enthusiastic teammates contributing their daily steps.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Walk Section -->
+    
+
+    <!-- Community Leaders Section (Merged from Hall of Fame) -->
+    <section id="community-leaders" class="bg-surface-container-lowest py-24 px-container-padding">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display-lg text-display-lg text-primary mb-2">Step Leaders</h2>
+                
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                <!-- Top Explorers Leaderboard -->
+                <div class="space-y-gutter lg:col-span-12 max-w-3xl mx-auto">
+                    <div class="flex items-center justify-between px-2">
+                        <h3 class="font-headline-md text-headline-md flex items-center gap-2"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">emoji_events</span>Top Steppers</h3>
+                        <button class="text-primary font-label-lg hover:underline">View All</button>
+                    </div>
+                    <div class="space-y-stack-sm">
+                        <!-- Rank 1 -->
+                        <div class="bg-white p-4 rounded-lg flex items-center gap-4 soft-bloom bubbly-hover border-l-8 border-secondary-fixed">
+                            <span class="font-display-lg text-secondary text-[24px] w-8">1</span>
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-secondary-fixed">
+                                <img class="w-full h-full object-cover" alt="Grandpa Steve" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKAS1spZkcPMCWcDwHZsDJbsX9jbLkAXDMuPTKyW058hGRtJ2JjXy0oD7D_sVYF0ajWkrt3SzW_kQc5wOYTXQ7J78MymJXLoSxUFukX7_sHu_l3QoUBHg9DY9L4ygIEA83nh6e6xPfh651IgKpEQlmf0GAMHL_FaWIvDfOVZCf0NgwgAFG92t8kp7jHWZpieV9aQKFNKHVtaKpbBqj6xtNvpTZsD5JK-vv8-UJdu5zwdDRnj336-KF">
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-headline-md text-on-surface !text-body-lg">Grandpa Steve</p>
+                                <p class="text-label-md text-on-surface-variant">2,140 km walked</p>
+                            </div>
+                            
+                        </div>
+                        <!-- Rank 2 -->
+                        <div class="bg-white p-4 rounded-lg flex items-center gap-4 soft-bloom bubbly-hover border-l-8 border-outline-variant">
+                            <span class="font-display-lg text-outline text-[24px] w-8">2</span>
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-outline-variant">
+                                <img class="w-full h-full object-cover" alt="Maria G." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNdFd3-59h_PTf-1QNr4ie1cdEFx_Fuob9b7RMx-skXCK_1_EE0gjSfWl0bPf_i6qrpsGW_HTE1BFPfqMD9H-m4VbwPlcRxA7GbH67Vd9sfSWRNYK61gcMklRBV3O4JUQHByB-8aP89NLTucX9BxJCMJ7NUS2oq_BUmIvCkQ4Qz9ocrAc5B2Zyw53irX_DRBBjnuWdP-BsmKUEJHldLMqLZw-5gojzxb--W84nuAbwArgUVrOKLBiS">
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-headline-md text-on-surface !text-body-lg">Maria G.</p>
+                                <p class="text-label-md text-on-surface-variant">1,982 km walked</p>
+                            </div>
+                            
+                        </div>
+                        <!-- Rank 3 -->
+                        <div class="bg-white p-4 rounded-lg flex items-center gap-4 soft-bloom bubbly-hover border-l-8 border-secondary">
+                            <span class="font-display-lg text-secondary text-[24px] w-8">3</span>
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-secondary">
+                                <img class="w-full h-full object-cover" alt="The Walker Clan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5L6uVzuekTUQce4FNzdOgmTRC7105G1JGeh3L2D5YWs8aRksELnIPmZkt1u6PWjUl54kususs884xfXmogmS1Tg0D1fAZY1lIJaiUs6HWc16XFyz3HEZTBydS3z4cH30JQk3QX9gNExsB0QnQAIJXSTbgr4RGPPTeZtGcLeOougG26M1RAwrufZ3IsQ7YMoELOt73aESNYA907y6xF2czr0eYnQcnkwLJjcp6eCauhWQMtPqfYvnf">
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-headline-md text-on-surface !text-body-lg">The Walker Clan</p>
+                                <p class="text-label-md text-on-surface-variant">1,750 km walked</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elite Squads List -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    
+</main>
+
+<!-- Submit Walk Modal (Unauthenticated flow) -->
+<div id="submit-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/40 backdrop-blur-sm p-container-padding">
+    <div class="bg-surface w-full max-w-md rounded-xl p-8 soft-bloom relative">
+        <a href="#" class="absolute top-4 right-4 text-outline-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </a>
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Log Your Steps</h2>
+        <p class="font-body-md text-on-surface-variant mb-6">Contribute to our collective voyage to Paris!</p>
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Steps logged! Thank you for walking!'); window.location.hash='';">
+            <div>
+                <label class="block font-label-lg mb-1" for="nickname">Your Nickname</label>
+                <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-primary" id="nickname" placeholder="e.g. Speedster Jane" required="" type="text">
+            </div>
+            <div>
+                <label class="block font-label-lg mb-1" for="steps">Steps Walked Today</label>
+                <input class="w-full rounded-lg border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-primary" id="steps" placeholder="e.g. 10,000" required="" type="number">
+            </div>
+            <button type="submit" class="w-full bubbly-button bg-primary text-on-primary py-4 rounded-xl font-headline-md mt-4">
+                Submit Steps
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+
+
+<script class="">
+    // Smooth Counter Animation for Step Total
+    const counterElement = document.getElementById('step-counter');
+    const targetValue = 12458902;
+    let currentValue = 12450000;
+    
+    function updateCounter() {
+        if (currentValue < targetValue) {
+            const increment = Math.ceil((targetValue - currentValue) / 20);
+            currentValue += increment;
+            counterElement.innerText = currentValue.toLocaleString();
+            requestAnimationFrame(update</script></body></html>
