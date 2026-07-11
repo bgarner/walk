@@ -1,5 +1,5 @@
-import { neon } from "@neondatabase/serverless";
 import { NextResponse } from "next/server";
+import postgres from "postgres";
 
 type StepEntry = {
   id: number;
@@ -14,13 +14,33 @@ type Leader = {
   entries: number;
 };
 
+let client: ReturnType<typeof postgres> | null = null;
+
+function usableConnectionString(value: string | undefined) {
+  if (!value || value === '""') {
+    return null;
+  }
+
+  return value;
+}
+
 function getSql() {
-  const connectionString = process.env.POSTGRES_URL;
+  const connectionString =
+    usableConnectionString(process.env.POSTGRES_URL) ??
+    usableConnectionString(process.env.DATABASE_URL) ??
+    usableConnectionString(process.env.POSTGRES_PRISMA_URL) ??
+    usableConnectionString(process.env.POSTGRES_URL_NON_POOLING);
+
   if (!connectionString) {
     return null;
   }
 
-  return neon(connectionString);
+  client ??= postgres(connectionString, {
+    max: 1,
+    prepare: false,
+  });
+
+  return client;
 }
 
 async function ensureTable() {

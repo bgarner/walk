@@ -103,7 +103,6 @@ export default function Home() {
         setEntries(local);
         setServerLeaders([]);
         setTotalSteps(local.reduce((sum: number, item: StepEntry) => sum + item.steps, 0));
-        setMessage("Using this browser until Vercel Postgres is connected.");
       }
     }
 
@@ -156,7 +155,7 @@ export default function Home() {
       setEntries(nextEntries);
       setServerLeaders([]);
       setTotalSteps(nextEntries.reduce((sum, item) => sum + item.steps, 0));
-      setMessage("Saved in this browser. Connect Vercel Postgres for shared tracking.");
+      setMessage("Steps added to the group walk.");
     } finally {
       setSaving(false);
     }
