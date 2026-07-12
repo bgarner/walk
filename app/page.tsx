@@ -16,6 +16,8 @@ type Leader = {
   entries: number;
 };
 
+type EntryUnit = "steps" | "km";
+
 function formatDistance(steps: number) {
   if (steps < 1000) {
     return `${steps.toLocaleString()} m`;
@@ -80,9 +82,24 @@ function addEntryToLeaders(leaders: Leader[], entry: StepEntry): Leader[] {
     .slice(0, 10);
 }
 
+function amountToSteps(amount: string, unit: EntryUnit) {
+  const value = Number(amount);
+
+  if (!Number.isFinite(value) || value <= 0) {
+    return null;
+  }
+
+  if (unit === "steps") {
+    return Number.isInteger(value) ? value : null;
+  }
+
+  return Math.round(value * 1000);
+}
+
 export default function Home() {
   const [name, setName] = useState("");
-  const [steps, setSteps] = useState("");
+  const [amount, setAmount] = useState("");
+  const [entryUnit, setEntryUnit] = useState<EntryUnit>("steps");
   const [totalSteps, setTotalSteps] = useState(0);
   const [entries, setEntries] = useState<StepEntry[]>([]);
   const [serverLeaders, setServerLeaders] = useState<Leader[]>([]);
@@ -111,10 +128,14 @@ export default function Home() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const cleanSteps = Number(steps);
+    const cleanSteps = amountToSteps(amount, entryUnit);
 
-    if (!name.trim() || !Number.isInteger(cleanSteps) || cleanSteps <= 0) {
-      setMessage("Add a name and a whole number of steps.");
+    if (!name.trim() || cleanSteps === null || cleanSteps <= 0) {
+      setMessage(
+        entryUnit === "steps"
+          ? "Add a name and a whole number of steps."
+          : "Add a name and a distance greater than 0 km.",
+      );
       return;
     }
 
@@ -141,7 +162,7 @@ export default function Home() {
       setServerLeaders((current) => addEntryToLeaders(current, newEntry));
       setTotalSteps(data.totalSteps ?? totalSteps + cleanSteps);
       setName("");
-      setSteps("");
+      setAmount("");
       setMessage("Steps added to the group walk.");
     } catch {
       const newEntry: StepEntry = {
@@ -212,16 +233,42 @@ export default function Home() {
                   placeholder="e.g. Speedster Jane"
                 />
               </label>
+
+              <div className="unit-toggle" aria-label="Choose entry type">
+                <button
+                  type="button"
+                  className={entryUnit === "steps" ? "active" : ""}
+                  onClick={() => setEntryUnit("steps")}
+                >
+                  Steps
+                </button>
+                <button
+                  type="button"
+                  className={entryUnit === "km" ? "active" : ""}
+                  onClick={() => setEntryUnit("km")}
+                >
+                  Kilometers
+                </button>
+              </div>
+
               <label>
-                Steps Walked Today
+                {entryUnit === "steps" ? "Steps Walked Today" : "Distance Walked Today"}
                 <input
-                  value={steps}
-                  onChange={(event) => setSteps(event.target.value)}
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  placeholder="e.g. 10000"
+                  value={amount}
+                  onChange={(event) => setAmount(event.target.value)}
+                  inputMode="decimal"
+                  pattern={entryUnit === "steps" ? "[0-9]*" : "[0-9]*[.]?[0-9]*"}
+                  placeholder={entryUnit === "steps" ? "e.g. 10000" : "e.g. 3.5 km"}
                 />
               </label>
+              {entryUnit === "km" && amountToSteps(amount, entryUnit) !== null && (
+                <p className="conversion-note">
+                  {Number(amount).toLocaleString(undefined, {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  km = {amountToSteps(amount, entryUnit)?.toLocaleString()} steps
+                </p>
+              )}
               <button type="submit" disabled={saving}>
                 {saving ? "Adding..." : "Submit Steps"}
               </button>
